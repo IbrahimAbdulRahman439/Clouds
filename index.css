@@ -1,0 +1,125 @@
+
+        :root {
+            --primary: #EAAE00; /* Vibrant gold */
+            --secondary: #3A913F; /* Deep green */
+            --accent: #D23C00; /* Rich terracotta */
+            --accent2: #7D3CFF; /* Purple accent */
+            --dark: #1A120B; /* Dark brown */
+            --light: #FEF7EB; /* Warm cream */
+            --text: #2D2520; /* Rich brown */
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        body {
+            background-color: var(--light);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 500px;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/african-pattern.png') repeat-x;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .recipe-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            border: 1px solid rgba(var(--primary)/0.15);
+            background: white;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            border-color: var(--primary);
+        }
+        
+        .nav-item:hover {
+            color: var(--primary);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            box-shadow: 0 4px 15px rgba(var(--primary)/0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .meal-plan-day:hover {
+            border-color: var(--primary);
+        }
+        
+        .cuisine-filter:hover {
+            background-color: rgba(230, 126, 34, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2rem;
+            }
+        }
+   
